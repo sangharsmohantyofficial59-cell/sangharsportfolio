@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export const ContactSection: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', whatsapp: '', message: '' });
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(false);
 
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9g9BLR60xn_mZcyCYmVA5P_jp5_xrIQLfIMGSRqghx0LxP-MS18rW9ycwAhcg0Ld6Og/exec'; // paste your Apps Script Web App URL here
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzvd_idStOgL-7WCiSYdZSQPtJ_eUdHmh3yxoSG0oKfRHnXxzJ_c53oqotquthmrokw/exec'; // paste your Apps Script Web App URL here
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +23,7 @@ export const ContactSection: React.FC = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          whatsapp: formData.whatsapp,
           message: formData.message,
           source: 'Portfolio Website - Contact Form',
         }),
@@ -157,6 +158,15 @@ export const ContactSection: React.FC = () => {
                     >
                       Instagram ↗
                     </a>
+                      <a
+                        href="https://wa.me/919078938019"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3.5 py-1.5 text-[10.5px] font-medium tracking-[0.16em] uppercase rounded-sm border border-[#8C6D4F]/40 bg-[#14100D] hover:border-[#D4AF37] hover:text-white text-[#EAD8C7] transition-all"
+                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      >
+                        WhatsApp ↗
+                      </a>
                   </div>
                 </div>
               </div>
@@ -221,6 +231,21 @@ export const ContactSection: React.FC = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="Enter email"
+                      className="w-full bg-[#120F0C] border border-[#8C6D4F]/30 focus:border-[#D4AF37] text-xs text-white placeholder-[#8C6D4F]/50 px-4 py-3 outline-none rounded-sm transition-colors"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    />
+                  </div>
+
+                  <div>
+                    <span className="block text-[9.5px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F] mb-2">
+                      // WHATSAPP
+                    </span>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.whatsapp}
+                      onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                      placeholder="Enter WhatsApp number"
                       className="w-full bg-[#120F0C] border border-[#8C6D4F]/30 focus:border-[#D4AF37] text-xs text-white placeholder-[#8C6D4F]/50 px-4 py-3 outline-none rounded-sm transition-colors"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     />
