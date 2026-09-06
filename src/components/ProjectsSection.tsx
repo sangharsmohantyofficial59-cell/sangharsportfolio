@@ -17,12 +17,12 @@ interface Project {
 const projects: Project[] = [
   {
     number: '01',
-    title: 'NSDL Agency Banking',
+    title: 'NSDL Payments Bank',
     category: 'AGENCY BANKING PLATFORM',
     description:
       'End-to-end ownership of NSDL Agency Banking delivery — coordinating Tech, Product, QA and Implementation teams through daily Agile ceremonies to take the product from requirement to a 7-month production go-live across five core services.',
     githubUrl: 'https://www.linkedin.com/in/sanghars-mohanty-371996149',
-    tech: ['Agile / Scrum', 'Jira', 'AEPS', 'DMT', 'UPI CashPoint', 'Stakeholder Mgmt'],
+    tech: ['Agile / Scrum', 'Jira', 'AEPS','Core banking', 'DMT', 'UPI Cashpoint', 'Stakeholder Mgmt'],
     metrics: [
       { label: 'TIMELINE', value: '7-Month Go-Live' },
       { label: 'SCOPE', value: '5 Core Products' },
@@ -32,7 +32,7 @@ const projects: Project[] = [
   {
     number: '02',
     title: 'Prepaid Card Product',
-    category: 'RELEASE & PROJECT COORDINATION',
+    category: ' FEATURE RELEASE & PROJECT COORDINATION',
     description:
       'Managing the Prepaid Card product roadmap — running Jira-based ticket analysis, coordinating cross-functional release cycles, and driving defect resolution ahead of deployment windows.',
     githubUrl: 'https://www.linkedin.com/in/sanghars-mohanty-371996149',
