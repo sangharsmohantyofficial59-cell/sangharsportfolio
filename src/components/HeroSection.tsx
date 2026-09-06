@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
+
+const resumeUrl = '/Resume_Sanghars_Mohanty.docx';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -38,7 +40,6 @@ const navItems = [
 export const HeroSection: React.FC = () => {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
   const [isHovered, setIsHovered] = useState(false);
-  const [showResumeNotice, setShowResumeNotice] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -48,49 +49,8 @@ export const HeroSection: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const handleResumeClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setShowResumeNotice(true);
-    setTimeout(() => {
-      setShowResumeNotice(false);
-    }, 3500);
-  };
-
   return (
     <section className="relative w-screen h-screen overflow-hidden bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black cursor-none">
-      {/* ================= RESUME COMING SOON TOAST ================= */}
-      <AnimatePresence>
-        {showResumeNotice && (
-          <motion.div
-            initial={{ opacity: 0, y: -30, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed top-8 left-1/2 -translate-x-1/2 z-[100] pointer-events-auto"
-          >
-            <div className="flex items-center space-x-3.5 px-6 py-3.5 rounded-sm border border-[#D4AF37] bg-[#120F0C]/95 backdrop-blur-md shadow-[0_10px_35px_rgba(212,175,55,0.25)]">
-              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping" />
-              <div className="flex flex-col">
-                <span 
-                  className="text-[11px] font-mono tracking-[0.25em] uppercase text-[#F7E7C4] font-semibold"
-                >
-                  RESUME // COMING SOON
-                </span>
-                <span className="text-[10px] text-[#A8988B] font-light" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  Updated CV is currently in preparation.
-                </span>
-              </div>
-              <button
-                onClick={() => setShowResumeNotice(false)}
-                className="ml-4 text-[#C4B5A5] hover:text-white text-xs transition-colors"
-              >
-                ✕
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* ================= 1. MINIMAL CUSTOM CURSOR ================= */}
       {cursorPos.x >= 0 && (
         <motion.div
@@ -277,10 +237,10 @@ export const HeroSection: React.FC = () => {
                 </span>
               </motion.a>
 
-              {/* Resume Button with Coming Soon Popup */}
-              <motion.button
-                type="button"
-                onClick={handleResumeClick}
+              {/* Resume Download */}
+              <motion.a
+                href={resumeUrl}
+                download="Resume_Sanghars_Mohanty.docx"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
@@ -290,7 +250,7 @@ export const HeroSection: React.FC = () => {
                 <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
                   ↓
                 </span>
-              </motion.button>
+              </motion.a>
             </motion.div>
           </motion.div>
 
