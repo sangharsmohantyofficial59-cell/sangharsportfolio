@@ -122,12 +122,6 @@ export const ProjectsSection: React.FC = () => {
             </span>
           </h2>
 
-          <p
-            className="text-xs sm:text-sm font-light text-[#A8988B] max-w-sm mt-4 md:mt-0 leading-relaxed"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            Scroll down to unfold the system architecture cards. Each project is crafted with high-performance code and motion design.
-          </p>
         </motion.div>
 
         {/* React Bits Stacking Deck */}
