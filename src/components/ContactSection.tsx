@@ -5,10 +5,34 @@ import { motion } from 'framer-motion';
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9g9BLR60xn_mZcyCYmVA5P_jp5_xrIQLfIMGSRqghx0LxP-MS18rW9ycwAhcg0Ld6Og/exec'; // paste your Apps Script Web App URL here
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setSending(true);
+    setError(false);
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          source: 'Portfolio Website - Contact Form',
+        }),
+      });
+      setSent(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -75,7 +99,7 @@ export const ContactSection: React.FC = () => {
                   <span className="block text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#8C6D4F] mb-1">
                     // DIRECT INBOX
                   </span>
-                  <a
+                    <a
                     href="mailto:sangharsmohanty59@gmail.com"
                     className="text-xs sm:text-sm font-light text-[#EAD8C7] hover:text-[#D4AF37] transition-colors"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -88,7 +112,7 @@ export const ContactSection: React.FC = () => {
                   <span className="block text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#8C6D4F] mb-1">
                     // PHONE
                   </span>
-                  <a
+                    <a
                     href="tel:+919078938019"
                     className="text-xs sm:text-sm font-light text-[#EAD8C7] hover:text-[#D4AF37] transition-colors"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -115,7 +139,7 @@ export const ContactSection: React.FC = () => {
                     // SOCIAL CHANNELS
                   </span>
                   <div className="flex flex-wrap gap-2.5">
-                    <a
+                      <a
                       href="https://www.linkedin.com/in/sanghars-mohanty-371996149"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -124,7 +148,7 @@ export const ContactSection: React.FC = () => {
                     >
                       LinkedIn ↗
                     </a>
-                    <a
+                      <a
                       href="https://www.instagram.com/mr.mohanty1902"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -220,11 +244,18 @@ export const ContactSection: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 border border-[#8C6D4F]/50 bg-[#14100D] hover:border-[#D4AF37] hover:bg-[#1A1510] text-[#E8DFD8] hover:text-[#F7E7C4] text-xs font-medium tracking-[0.25em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
+                  disabled={sending}
+                  className="w-full py-3.5 border border-[#8C6D4F]/50 bg-[#14100D] hover:border-[#D4AF37] hover:bg-[#1A1510] text-[#E8DFD8] hover:text-[#F7E7C4] text-xs font-medium tracking-[0.25em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)] disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  EXECUTE DISPATCH ↗
+                  {sending ? 'TRANSMITTING...' : 'EXECUTE DISPATCH ↗'}
                 </button>
+
+                {error && (
+                  <p className="text-[11px] text-red-400 text-center pt-1" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                    Something went wrong. Please try again or email me directly.
+                  </p>
+                )}
 
               </form>
             )}
