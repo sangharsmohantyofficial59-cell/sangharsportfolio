@@ -6,9 +6,9 @@ const ventures = [
   {
     title: 'FREELANCE DIGITAL & AI CONSULTING',
     badge: 'SOLO PRACTICE',
-    items: ['Web Development', 'AI Workflow Design', 'Brand & Landing Pages', 'Automation Systems'],
+    items: ['Website Development', 'AI Workflow Design', 'Brand & Landing Pages', 'Automation Systems'],
     description:
-      'Independent practice under my own brand — designing landing pages, AI-assisted workflows, and immersive 3D scroll-driven portfolio sites for clients, built on a "Build → Brand → Automate → Grow" delivery spine.',
+      'Independent practice under my own brand — designing landing pages, AI-assisted workflows, and immersive 3D premium scroll-driven portfolio sites for clients, built on a "Build → Brand → Automate → Grow" delivery spine.',
     stat: 'OWN BRAND',
     link: 'https://www.linkedin.com/in/sanghars-mohanty-371996149',
     colSpan: 'lg:col-span-6',
