@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
-  alternates: { canonical: '/' },
   icons: { icon: '/favicon.svg' },
   verification: { google: 'QLtL_2KFI71-3dOTLjc8sVLvkgY2K5GKLARBFrUWRhU' },
   openGraph: {

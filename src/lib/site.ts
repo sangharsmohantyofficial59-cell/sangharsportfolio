@@ -21,7 +21,7 @@ export const PAGES: SitePage[] = [
   {
     path: '/about',
     label: 'About',
-    title: 'About Sanghars Mohanty',
+    title: 'About Me',
     description:
       'Meet Sanghars Mohanty, a Bhubaneswar based project manager and freelance digital consultant who turns complex requirements into shipped products.',
   },
@@ -42,7 +42,7 @@ export const PAGES: SitePage[] = [
   {
     path: '/ventures',
     label: 'Ventures',
-    title: 'Freelance Consulting and Digital Shakti Academy',
+    title: 'Freelance Consulting and Ventures',
     description:
       'A freelance digital and AI consulting practice plus Digital Shakti Academy, a portfolio template business across 14 profession-specific niches.',
   },
@@ -56,7 +56,7 @@ export const PAGES: SitePage[] = [
   {
     path: '/contact',
     label: 'Contact',
-    title: 'Contact Sanghars Mohanty',
+    title: 'Contact and Freelance Enquiries',
     description:
       'Have a fintech delivery challenge or a freelance digital or AI build in mind? Contact Sanghars Mohanty by email, WhatsApp, LinkedIn or the form.',
   },
