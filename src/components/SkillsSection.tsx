@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
@@ -31,7 +33,7 @@ const bentoCategories = [
     title: 'AI-ASSISTED WORKFLOWS',
     badge: 'SPEC-DRIVEN PROTOTYPING',
     items: ['Claude Projects', 'ChatGPT', 'Google AI Studio', 'Multi-Agent Design', 'Rapid Prototyping'],
-    description: 'Piloting AI-assisted, spec-driven workflows — including multi-agent systems that convert requirement docs into structured feature files.',
+    description: 'Piloting AI-assisted, spec-driven workflows, including multi-agent systems that convert requirement docs into structured feature files.',
     stat: 'NEXT-GEN MODULES',
     colSpan: 'lg:col-span-7',
   },
@@ -61,7 +63,7 @@ const cardVariants: Variants = {
   },
 };
 
-export const SkillsSection: React.FC = () => {
+export const SkillsSection: React.FC<{ headingLevel?: 'h1' | 'h2' }> = ({ headingLevel: Heading = 'h2' }) => {
   const [, setHoveredIdx] = useState<number | null>(null);
 
   return (
@@ -100,7 +102,7 @@ export const SkillsSection: React.FC = () => {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="mb-10"
         >
-          <h2
+          <Heading
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
@@ -110,7 +112,7 @@ export const SkillsSection: React.FC = () => {
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
               PRECISION APPLIED.
             </span>
-          </h2>
+          </Heading>
         </motion.div>
 
         {/* Bento Grid */}

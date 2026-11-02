@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
@@ -8,7 +10,7 @@ const ventures = [
     badge: 'SOLO PRACTICE',
     items: ['Website Development', 'AI Workflow Design', 'Brand & Landing Pages', 'Automation Systems'],
     description:
-      'Independent practice under my own brand — designing landing pages, AI-assisted workflows, and immersive 3D premium scroll-driven portfolio sites for clients, built on a "Build → Brand → Automate → Grow" delivery spine.',
+      'Independent practice under my own brand, designing landing pages, AI-assisted workflows, and immersive 3D premium scroll-driven portfolio sites for clients, built on a "Build → Brand → Automate → Grow" delivery spine.',
     stat: 'OWN BRAND',
     link: 'https://www.linkedin.com/in/sanghars-mohanty-371996149',
     colSpan: 'lg:col-span-6',
@@ -18,7 +20,7 @@ const ventures = [
     badge: 'CO-OPERATED VENTURE',
     items: ['Portfolio Templates', 'Lead Automation', 'Brand & Web Presence', 'Zero-Cost Ops Stack'],
     description:
-      'Co-run with my brother — I lead product & delivery while he drives sales and marketing. Building a reusable portfolio-template business across 14 profession-specific niches, backed by a zero-cost Google Workspace lead-capture and automation system.',
+      'Co-run with my brother. I lead product & delivery while he drives sales and marketing. Building a reusable portfolio-template business across 14 profession-specific niches, backed by a zero-cost Google Workspace lead-capture and automation system.',
     stat: '14 NICHES',
     link: 'https://www.linkedin.com/in/sanghars-mohanty-371996149',
     colSpan: 'lg:col-span-6',
@@ -49,7 +51,7 @@ const cardVariants: Variants = {
   },
 };
 
-export const VenturesSection: React.FC = () => {
+export const VenturesSection: React.FC<{ headingLevel?: 'h1' | 'h2' }> = ({ headingLevel: Heading = 'h2' }) => {
   const [, setHoveredIdx] = useState<number | null>(null);
 
   return (
@@ -88,7 +90,7 @@ export const VenturesSection: React.FC = () => {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="mb-10"
         >
-          <h2
+          <Heading
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
@@ -98,12 +100,12 @@ export const VenturesSection: React.FC = () => {
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
               RUN LIKE A BUSINESS.
             </span>
-          </h2>
+          </Heading>
           <p
             className="mt-5 text-xs sm:text-sm text-[#A8988B] font-light max-w-2xl leading-relaxed"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            Five days a week I run delivery in fintech. Weekends go into two ventures of my own — a freelance digital & AI consulting practice, and a template business I co-operate with my brother.
+            Five days a week I run delivery in fintech. Weekends go into two ventures of my own: a freelance digital & AI consulting practice, and a template business I co-operate with my brother.
           </p>
         </motion.div>
 

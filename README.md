@@ -7,7 +7,7 @@
   </p>
 
   <p align="center">
-    <a href="https://a-talking-cinematic-portfolio-yfq6.vercel.app/" target="_blank">
+    <a href="https://sangharsmohanty.vercel.app/" target="_blank">
       <img src="https://img.shields.io/badge/Live_Demo-a--talking--cinematic--portfolio-d4af37?style=for-the-badge&logo=vercel&logoColor=black" alt="Live Demo" />
     </a>
     <a href="https://www.instagram.com/mr.mohanty1902" target="_blank">
@@ -17,7 +17,7 @@
       <img src="https://img.shields.io/badge/GitHub-sanghars-mohanty-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
     </a>
   <p align="center">
-    <a href="https://a-talking-cinematic-portfolio-yfq6.vercel.app/" target="_blank">
+    <a href="https://sangharsmohanty.vercel.app/" target="_blank">
       <img src="./public/hero-preview.png" alt="Cinematic Portfolio Hero Preview" width="100%" />
     </a>
   </p>
@@ -41,7 +41,7 @@
 - **🗂️ Architectural Bento Matrix**: Categorized tech matrix showcasing Creative 3D/Frontend, Full-Stack & Mobile, Databases, and Core Engineering.
 - **🗺️ Interactive Route Timeline**: Animated SVG milestone progress line tracking career milestones and education.
 - **📟 Monolith Dispatch Terminal**: Minimalist contact terminal with immediate status notifications, email triggers, and social channels.
-- **⚡ Ultra-Lightweight & Fast**: Built on Vite 8 and React 19 with sub-second production builds.
+- **⚡ Ultra-Lightweight & Fast**: Built on Next.js and React 19 with server-rendered pages for search engines.
 
 ---
 
@@ -50,7 +50,7 @@
 | Domain | Technology |
 | :--- | :--- |
 | **Core Framework** | [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) |
-| **Build Tooling** | [Vite 8](https://vitejs.dev/) |
+| **Framework** | [Next.js](https://nextjs.org/) |
 | **Styling & Design System** | [Tailwind CSS v4](https://tailwindcss.com/) + PostCSS |
 | **Animation Engine** | [Framer Motion](https://www.framer.com/motion/) |
 | **Smooth Scrolling** | [Lenis](https://lenis.darkroom.engineering/) |
@@ -86,7 +86,7 @@ cinematic-portfolio/
 │   └── main.tsx                # Application bootstrap
 ├── index.html                  # HTML entry with custom typography
 ├── package.json                # Project dependencies and build scripts
-└── vite.config.ts              # Vite configuration
+└── next.config.mjs             # Next.js configuration
 ```
 
 ---
@@ -132,7 +132,7 @@ npm run build
 To preview the production build locally:
 
 ```bash
-npm run preview
+npm run start
 ```
 
 ---
@@ -155,7 +155,7 @@ Replace `public/videos/hero.mp4` with any high-definition MP4 clip. For optimal 
 
 Personalized and maintained by **Sanghars Mohanty**.
 
-- 🌐 **Live Website**: [a-talking-cinematic-portfolio-yfq6.vercel.app](https://a-talking-cinematic-portfolio-yfq6.vercel.app/)
+- 🌐 **Live Website**: [sangharsmohanty.vercel.app](https://sangharsmohanty.vercel.app/)
 - 📸 **Instagram**: [@mr.mohanty1902](https://www.instagram.com/mr.mohanty1902)
 - 💻 **GitHub**: [@sanghars-mohanty](https://www.linkedin.com/in/sanghars-mohanty-371996149)
 - 💼 **LinkedIn**: [sanghars-mohanty](https://www.linkedin.com/in/sanghars-mohanty-371996149)

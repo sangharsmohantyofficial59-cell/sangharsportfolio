@@ -1,7 +1,8 @@
+'use client';
+
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import aboutImg from '../assets/about.png';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -27,7 +28,7 @@ const fadeUpVariants: Variants = {
   },
 };
 
-export const AboutSection: React.FC = () => {
+export const AboutSection: React.FC<{ headingLevel?: 'h1' | 'h2' }> = ({ headingLevel: Heading = 'h2' }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isCardHovered, setIsCardHovered] = useState(false);
 
@@ -115,7 +116,7 @@ export const AboutSection: React.FC = () => {
           >
             {/* Cinematic Headline with Glow Flare */}
             <motion.div variants={fadeUpVariants} className="relative mb-6 select-none">
-              <h2
+              <Heading
                 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] tracking-tight uppercase leading-[0.88]"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
@@ -125,7 +126,7 @@ export const AboutSection: React.FC = () => {
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.3)]">
                   I DELIVER WHAT'S NEXT.
                 </span>
-              </h2>
+              </Heading>
             </motion.div>
 
             {/* Concise Bio Paragraph */}
@@ -262,7 +263,9 @@ export const AboutSection: React.FC = () => {
               <div className="relative overflow-hidden w-full max-w-[390px] aspect-[4/5] bg-black rounded-sm">
                 {/* Main Portrait */}
                 <img
-                  src={aboutImg}
+                  src="/about.png"
+                  width={1254}
+                  height={1254}
                   alt="Sanghars Mohanty"
                   className="w-full h-full object-cover object-top filter brightness-[0.94] contrast-[1.06] saturate-[1.02] group-hover:brightness-105 group-hover:contrast-[1.12] transition-all duration-700 ease-out"
                 />

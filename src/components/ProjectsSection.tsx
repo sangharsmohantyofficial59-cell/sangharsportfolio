@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import ScrollStack, { ScrollStackItem } from './ScrollStack';
@@ -20,7 +22,7 @@ const projects: Project[] = [
     title: 'NSDL Payments Bank',
     category: 'AGENCY BANKING PLATFORM',
     description:
-      'End-to-end ownership of NSDL Agency Banking delivery — coordinating Tech, Product, QA and Implementation teams through daily Agile ceremonies to take the product from requirement to a 7-month production go-live across five core services.',
+      'End-to-end ownership of NSDL Agency Banking delivery, coordinating Tech, Product, QA and Implementation teams through daily Agile ceremonies to take the product from requirement to a 7-month production go-live across five core services.',
     githubUrl: 'https://www.linkedin.com/in/sanghars-mohanty-371996149',
     tech: ['Agile / Scrum', 'Jira', 'AEPS','Core banking', 'DMT', 'UPI Cashpoint', 'Stakeholder Mgmt'],
     metrics: [
@@ -34,7 +36,7 @@ const projects: Project[] = [
     title: 'Prepaid Card Product',
     category: ' FEATURE RELEASE & PROJECT COORDINATION',
     description:
-      'Managing the Prepaid Card product roadmap — running Jira-based ticket analysis, coordinating cross-functional release cycles, and driving defect resolution ahead of deployment windows.',
+      'Managing the Prepaid Card product roadmap, running Jira-based ticket analysis, coordinating cross-functional release cycles, and driving defect resolution ahead of deployment windows.',
     githubUrl: 'https://www.linkedin.com/in/sanghars-mohanty-371996149',
     tech: ['Jira', 'Release Management', 'QA Coordination', 'Defect Tracking'],
     metrics: [
@@ -62,7 +64,7 @@ const projects: Project[] = [
     title: 'Cinematic Portfolio Builds for Clients',
     category: 'FREELANCE WEB DEVELOPMENT',
     description:
-      'Delivered two immersive, 3D scroll-driven portfolio sites for actor clients under my freelance consulting brand — structured end-to-end for GitHub version control and Vercel deployment.',
+      'Delivered two immersive, 3D scroll-driven portfolio sites for actor clients under my freelance consulting brand, structured end-to-end for GitHub version control and Vercel deployment.',
     githubUrl: 'https://www.linkedin.com/in/sanghars-mohanty-371996149',
     tech: ['Next.js', 'React Three Fiber', 'Vercel', 'GitHub'],
     metrics: [
@@ -73,7 +75,7 @@ const projects: Project[] = [
   },
 ];
 
-export const ProjectsSection: React.FC = () => {
+export const ProjectsSection: React.FC<{ headingLevel?: 'h1' | 'h2' }> = ({ headingLevel: Heading = 'h2' }) => {
   return (
     <section
       id="work"
@@ -110,7 +112,7 @@ export const ProjectsSection: React.FC = () => {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col md:flex-row md:items-end justify-between mb-16"
         >
-          <h2
+          <Heading
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
@@ -120,7 +122,7 @@ export const ProjectsSection: React.FC = () => {
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
               ENGINEERED VALUE.
             </span>
-          </h2>
+          </Heading>
 
         </motion.div>
 

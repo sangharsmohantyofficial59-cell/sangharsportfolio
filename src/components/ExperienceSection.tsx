@@ -1,3 +1,5 @@
+'use client';
+
 // src/components/ExperienceSection.tsx
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -16,7 +18,7 @@ const journey: RouteStop[] = [
     year: '2025 - PRESENT',
     title: 'PROJECT MANAGER',
     organization: 'ISERVEU TECHNOLOGIES PVT. LTD.',
-    description: 'Owning delivery for NSDL Agency Banking and the TAV2 Prepaid Card product — running daily Agile ceremonies across Tech, Product, QA & Implementation, and piloting AI-assisted spec-driven prototyping.',
+    description: 'Owning delivery for NSDL Agency Banking and the TAV2 Prepaid Card product, running daily Agile ceremonies across Tech, Product, QA & Implementation, and piloting AI-assisted spec-driven prototyping.',
   },
   {
     id: '02',
@@ -37,11 +39,11 @@ const journey: RouteStop[] = [
     year: '2014 - 2018',
     title: 'DIPLOMA IN MECHATRONICS ENGINEERING',
     organization: 'CTTC, BHUBANESWAR',
-    description: 'Built a technical foundation spanning mechanical, electronics, and control systems — the engineering base that now informs a structured, systems-first approach to product delivery.',
+    description: 'Built a technical foundation spanning mechanical, electronics, and control systems, the engineering base that now informs a structured, systems-first approach to product delivery.',
   },
 ];
 
-export const ExperienceSection: React.FC = () => {
+export const ExperienceSection: React.FC<{ headingLevel?: 'h1' | 'h2' }> = ({ headingLevel: Heading = 'h2' }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -87,7 +89,7 @@ export const ExperienceSection: React.FC = () => {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16"
         >
-          <h2
+          <Heading
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
@@ -97,7 +99,7 @@ export const ExperienceSection: React.FC = () => {
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
               MILESTONES.
             </span>
-          </h2>
+          </Heading>
         </motion.div>
 
         {/* Minimalist Route Map */}

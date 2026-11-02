@@ -1,8 +1,10 @@
+'use client';
+
 // src/components/ContactSection.tsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-export const ContactSection: React.FC = () => {
+export const ContactSection: React.FC<{ headingLevel?: 'h1' | 'h2' }> = ({ headingLevel: Heading = 'h2' }) => {
   const [formData, setFormData] = useState({ name: '', email: '', whatsapp: '', message: '' });
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
@@ -74,7 +76,7 @@ export const ContactSection: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="mb-6"
               >
-                <h2
+                <Heading
                   className="text-5xl sm:text-6xl md:text-7xl tracking-tight uppercase leading-[0.85] select-none"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
@@ -84,7 +86,7 @@ export const ContactSection: React.FC = () => {
                   <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
                     TRANSMISSION.
                   </span>
-                </h2>
+                </Heading>
               </motion.div>
 
               <p

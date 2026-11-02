@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
@@ -210,7 +212,7 @@ export const HeroSection: React.FC = () => {
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <p>
-                I turn complex fintech requirements into shipped products — coordinating Tech, Product, QA &amp; Implementation teams from spec to production go-live.
+                I turn complex fintech requirements into shipped products, coordinating Tech, Product, QA &amp; Implementation teams from spec to production go-live.
                 <br />
                 Where structured Agile delivery meets AI-assisted prototyping.
               </p>
